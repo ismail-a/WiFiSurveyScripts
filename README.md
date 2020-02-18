@@ -6,9 +6,14 @@ When you input this command on your Mac,
 ```sh
 $ ./wifiscan.sh 0001
 ```
-It saves XML file like 0001-20200201082015.xml
+It saves a XML file like 0001-20200201082015.xml
 
-You can convert this XML to a CSV with four columns of BSSID, SSID, RSSI, and CHANNEL.
+You can convert this/these XML file(s) to a CSV with six columns of Point id, Datetime, BSSID, SSID, RSSI, and Channel.
 ```sh
-$ ./AirportXML2CSV.py < 0001-20200201082015.xml > 0001-20200201082015.csv
+$ ./AirportXML2CSV.py [xmlfile ...] > aps.csv
+```
+
+If you have coordinates CSV (Point id, X, Y, Direction (Up, Down, Right, Left)) of each Point id, you can merge them by using mergeCSV.py.
+```sh
+$ ./mergeCSV.py aps.csv coordinates.CSV
 ```
