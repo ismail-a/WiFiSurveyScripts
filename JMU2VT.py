@@ -52,5 +52,5 @@ for beacon in wifi_csv:
     line += beacon['rssi'] + ","
     for i in range(len(aps) - aps[beacon['bssid']]['index'] - 1):
         line += "0,"
-    line += beacon['point_id']
+    line += beacon['loc_id']
     print(line)
